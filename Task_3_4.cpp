@@ -62,9 +62,11 @@ string decoder(string s, int key)
     cout << "Введите ключ (key): "<< endl;
     cin>>key; // Ввод значения ключа
     for (i=0; i<ws.size(); i++) {
-        ws[i]=ws[i] - key%32;
-        if (ws[i]>=1072) ws[i]=ws[i]-32;
-
+       if (ws[i]-key%32 < 1040) {
+           ws[i]=ws[i]-key%32+32;
+       } else {
+       ws[i] = ws[i]-key%32;
+       }
     }
     s = codec.to_bytes(ws); // перекодируем из UTF-32 in UTF-8
     cout<< "Расшифрованная строка :"<< endl;
