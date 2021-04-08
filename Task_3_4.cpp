@@ -4,6 +4,7 @@
 #include <locale>
 #include <cctype>
 #include <codecvt>
+#include <regex>
 using namespace std;
 
 string coder(string s, int key)
@@ -77,6 +78,7 @@ int main()
     cout <<"Введите строку (string):\n";
    getline(cin, s);
     cout << "Для зашифровки введите 0 / Для расшифровки введите 1"<<endl;
+    s = regex_replace(s, regex("№"), " ");
     int dei;
     int key = 0;
     cin>>dei;
