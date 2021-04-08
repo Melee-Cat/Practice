@@ -4,6 +4,7 @@
 #include <locale>
 #include <cctype>
 #include <codecvt>
+#include <regex>
 using namespace std;
 
 int main()
@@ -13,7 +14,7 @@ int main()
     string s;
     cout <<"Введите строку (string):\n";
     getline(cin, s);
-
+    s = regex_replace(s, regex("№"), " ");
     while (s[i]) {
         if (isalnum(s[i]) || s[i] == ' ' || ispunct(s[i])) { // Удаление всех символов, кроме русских букв. isalnum - проверка на принадлежность буквам и цифрам (A-Z,a-z,0-9). inspunct - проверка на принадлежность печатных символов
             s.erase (i,1);
