@@ -7,7 +7,7 @@
 #include <regex>
 using namespace std;
 
-string coder(string s, int key)
+string encrypt(string s, int key)
 {
 // Удаление латинских букв
     unsigned int i=0;
@@ -41,7 +41,7 @@ string coder(string s, int key)
     return s;
 }
 
-string decoder(string s, int key)
+string decrypt(string s, int key)
 {
 // Удаление латинских букв
     unsigned int i=0;
@@ -87,9 +87,9 @@ int main()
     int key = 0;
     cin>>dei;
     if (dei==0) {
-        coder(s,key);
+       encrypt(s,key);
     } else if (dei == 1) {
-        decoder(s,key);
+        decrypt(s,key);
     } else {
         cout<<"Данного действия не существует"<<endl;
     }
