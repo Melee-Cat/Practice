@@ -81,10 +81,11 @@ int main()
    getline(cin, s);
     cout << "Для зашифровки введите 0 / Для расшифровки введите 1"<<endl;
     s = regex_replace(s, regex("№"), " ");
+    s = regex_replace(s, regex("ё"), "Е");
+    s = regex_replace(s, regex("Ё"), "Е");
     int dei;
     int key = 0;
     cin>>dei;
-    string new_s;
     if (dei==0) {
         coder(s,key);
     } else if (dei == 1) {
